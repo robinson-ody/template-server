@@ -22,7 +22,7 @@ const controller: RequestHandler = async (req, res) => {
     throw new BadRequestError(`You can't delete yourself`);
 
   if (user.role === UserRole.SUPER_ADMIN)
-    throw new BadRequestError(`You can't delete master`);
+    throw new BadRequestError(`You can't delete super admin`);
 
   await user.deleteOne();
 
